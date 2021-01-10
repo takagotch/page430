@@ -1,0 +1,71 @@
+/**
+ * Page header
+ */
+.header-wrap {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba( $colorDocument, 0.5 );
+  box-shadow: $shadowBold;
+  z-index: $zindexElements;
+
+  // change from transparent to solid
+  &.solid {
+    background-color: $colorDocument;
+  }
+
+  // slide up and out of view
+  &.hidden {
+    transform: translateY( calc( -10px - #{$topbarHeight} ) );
+  }
+
+  .header-row {
+    height: $topbarHeight;
+
+    // avatar image
+    .header-image {
+      img {
+        display: block;
+        margin: 0 5px 0 0;
+        width: calc( #{$topbarHeight} - 1em );
+        height: calc( #{$topbarHeight} - 1em );
+        border-radius: 100px;
+      }
+    }
+
+    // logo link
+    .header-logo {
+      font-size: 140%;
+      line-height: 1em;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      color: darken( $colorBright, 20% );
+
+      a, b, span, button {
+        font-size: inherit;
+        font-weight: inherit;
+        text-transform: inherit;
+        color: inherit;
+      }
+      b, span {
+        color: $colorSecondary;
+      }
+    }
+
+    // menu button and dropdown on right
+    .header-menu {
+      .dropdown-trigger {
+        font-size: 140%;
+        line-height: 1em;
+        color: lighten( $colorDocumentText, 20% );
+        text-shadow: $shadowText;
+
+        &:hover {
+          color: darken( $colorDocumentText, 10% );
+        }
+      }
+    }
+  }
+}
